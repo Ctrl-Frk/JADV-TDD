@@ -48,4 +48,16 @@ public class PhoneBookTest {
                 Arguments.of("+7 999 999 99 97", null)
         );
     }
+
+    @Test
+    public void testFindByName() {
+        //arrange
+        String expected = "+7 999 999 99 99";
+
+        //act
+        String result = phoneBook.findByName("Slava");
+
+        //assert
+        Assertions.assertEquals(expected, result);
+    }
 }
