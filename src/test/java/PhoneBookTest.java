@@ -5,6 +5,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class PhoneBookTest {
@@ -56,6 +60,18 @@ public class PhoneBookTest {
 
         //act
         String result = phoneBook.findByName("Slava");
+
+        //assert
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    public void printAllNames() {
+        //arrange
+        List<String> expected = new ArrayList<>(Arrays.asList("Slava", "Test", "Vyacheslav"));
+
+        //act
+        List<String> result = phoneBook.printAllNames();
 
         //assert
         Assertions.assertEquals(expected, result);
