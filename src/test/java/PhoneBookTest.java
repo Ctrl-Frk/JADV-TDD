@@ -26,4 +26,21 @@ public class PhoneBookTest {
                 Arguments.of("Test", "+7 111 111 11 11", 3)
         );
     }
+
+    @ParameterizedTest
+    @MethodSource("sourceForFindByNumber")
+    public void parametrizedTestFindByNumber(String phoneNumber, String expected) {
+        //act
+        String result = phoneBook.findByNumber(phoneNumber);
+
+        //assert
+        Assertions.assertEquals(expected, result);
+    }
+
+    public static Stream<Arguments> sourceForFindByNumber() {
+        return Stream.of(Arguments.of("+7 999 999 99 99", "Slava"),
+                Arguments.of("+7 999 999 99 98", "Vyacheslav"),
+                Arguments.of("+7 999 999 99 97", null)
+        );
+    }
 }
