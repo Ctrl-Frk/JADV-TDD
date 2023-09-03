@@ -1,10 +1,8 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneBook {
     private static final PhoneBook PHONE_BOOK = new PhoneBook();
-    private static final Map<String, String> phoneBook = new HashMap<>();
+    private static final Map<String, String> phoneBook = new TreeMap<>();
 
     private PhoneBook() {
     }
@@ -34,6 +32,6 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+        return new ArrayList<>(phoneBook.keySet());
     }
 }

@@ -68,6 +68,8 @@ public class PhoneBookTest {
     @Test
     public void printAllNames() {
         //arrange
+        phoneBook.add("Vyacheslav", "+7 999 999 99 98");
+        phoneBook.add("Test", "+7 111 111 11 11");
         List<String> expected = new ArrayList<>(Arrays.asList("Slava", "Test", "Vyacheslav"));
 
         //act
